@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Add To Cart Section</title>
+    <style>
+        body {
+            padding: 10px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mainHeading {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 32rem;
+        }
+
+        #heading {
+            text-align: center;
+            font-size: x-large;
+            color: #ff6b82;
+        }
+
+        .items {
+            max-height: 11rem;
+            width: 30rem;
+            padding: 15px;
+            border: 1px solid gray;
+            border-radius: 8px;
+            margin: 1vh 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .itemsMain {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: larger;
+        }
+
+        .itemsBtn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .itemsInfo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .unit {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .discount {
+            background-color: #ff6b82;
+            padding: 2px 5px;
+            margin-left: 5px;
+            color: white;
+            border-radius: 4px;
+        }
+
+        .priceInfo {
+            text-align: left;
+        }
+
+        .priceInfo p {
+            margin: 0;
+        }
+
+        .originalPrice {
+            text-decoration: line-through;
+            color: gray;
+            font-size: medium;
+        }
+
+        .currentPrice {
+            color: #333;
+        }
+
+        .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: larger;
+            width: 31rem;
+        }
+
+        #cartBtn {
+            background-color: #ff6b82;
+            color: white;
+            width: 32rem;
+            height: 3rem;
+            font-size: larger;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .choices {
+            display: flex;
+            flex-direction: column;
+            font-size: larger;
+        }
+
+        .choice {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 15rem;
+            margin-left: 3rem;
+        }
+
+        .choice div {
+            margin: 3px 0 3px 0;
+        }
+
+        .dropdown {
+            margin: 10px 0;
+        }
+
+        .dropdown select {
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainHeading">
+        <p style="border: 1px solid gray; width: 9rem;"></p>
+        <p id="heading">YAY! It's BOGO</p>
+        <p style="border: 1px solid gray; width: 9rem;"></p>
+    </div>
+
+    <div class="main">
+        <div class="items" id="item1">
+            <div class="itemsMain">
+                <div class="itemsBtn">
+                    <input type="radio" name="item" id="radio1" />
+                    <div class="itemsInfo">
+                        <div class="unit" style="margin-bottom: -15px;">
+                            <p style="font-weight: bold;">1 Unit</p>
+                            <p class="discount">10% Off</p>
+                        </div>
+                        <p style="margin-top: 0;">Standard Price</p>
+                    </div>
+                </div>
+                <div class="priceInfo">
+                    <p class="currentPrice">$10.00 USD</p>
+                    <p class="originalPrice">$24.00 USD</p>
+                </div>
+            </div>
+            <div class="choices" style="display: none;" id="choice1">
+                <div class="choice">
+                    <div style="width: 0.5rem;"></div>
+                    <div>Size</div>
+                    <div style="margin-right: 1rem;">Colour</div>
+                </div>
+                <div class="choice">
+                    <div>#1</div>
+                    <div class="dropdown">
+                        <select id="size2">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <select id="color2">
+                            <option>Black</option>
+                            <option>White</option>
+                            <option>Red</option>
+                            <option>Blue</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="choice">
+                    <div>#2</div>
+                    <div class="dropdown">
+                        <select id="size2">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <select id="color2">
+                            <option>Black</option>
+                            <option>White</option>
+                            <option>Red</option>
+                            <option>Blue</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="items" id="item2">
+            <div class="itemsMain">
+                <div class="itemsBtn">
+                    <input type="radio" name="item" id="radio2" />
+                    <div class="itemsInfo">
+                        <div class="unit">
+                            <p style="font-weight: bold;">2 Unit</p>
+                            <p class="discount">20% Off</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="priceInfo">
+                    <p class="currentPrice">$18.00 USD</p>
+                    <p class="originalPrice">$24.00 USD</p>
+                </div>
+            </div>
+            <div class="choices" style="display: none;" id="choice2">
+                <div class="choice">
+                    <div style="width: 0.5rem;"></div>
+                    <div>Size</div>
+                    <div style="margin-right: 1rem;">Colour</div>
+                </div>
+                <div class="choice">
+                    <div>#1</div>
+                    <div class="dropdown">
+                        <select id="size2">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <select id="color2">
+                            <option>Black</option>
+                            <option>White</option>
+                            <option>Red</option>
+                            <option>Blue</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="choice">
+                    <div>#2</div>
+                    <div class="dropdown">
+                        <select id="size2">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <select id="color2">
+                            <option>Black</option>
+                            <option>White</option>
+                            <option>Red</option>
+                            <option>Blue</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="items" id="item3">
+            <div class="itemsMain">
+                <div class="itemsBtn">
+                    <input type="radio" name="item" id="radio3" />
+                    <div class="itemsInfo">
+                        <div class="unit">
+                            <p style="font-weight: bold;">3 Unit</p>
+                            <p class="discount">30% Off</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="priceInfo">
+                    <p class="currentPrice">$24.00 USD</p>
+                    <p class="originalPrice">$24.00 USD</p>
+                </div>
+            </div>
+            <div class="choices" style="display: none;" id="choice3">
+                <div class="choice">
+                    <div style="width: 0.5rem;"></div>
+                    <div>Size</div>
+                    <div style="margin-right: 1rem;">Colour</div>
+                </div>
+                <div class="choice">
+                    <div>#1</div>
+                    <div class="dropdown">
+                        <select id="size2">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <select id="color2">
+                            <option>Black</option>
+                            <option>White</option>
+                            <option>Red</option>
+                            <option>Blue</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="choice">
+                    <div>#2</div>
+                    <div class="dropdown">
+                        <select id="size2">
+                            <option>S</option>
+                            <option>M</option>
+                            <option>L</option>
+                            <option>XL</option>
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <select id="color2">
+                            <option>Black</option>
+                            <option>White</option>
+                            <option>Red</option>
+                            <option>Blue</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="price">
+        <p style="color: #ff6b82;">Free Delivery</p>
+        <p>Total: $18.00 USD</p>
+    </div>
+
+    <div>
+        <button id="cartBtn">
+            + Add To Cart
+        </button>
+    </div>
+
+    <script>
+        const item1Btn = document.getElementById('item1');
+        const item2Btn = document.getElementById('item2');
+        const item3Btn = document.getElementById('item3');
+        const radio1 = document.getElementById('radio1');
+        const radio2 = document.getElementById('radio2');
+        const radio3 = document.getElementById('radio3');
+        const choice1 = document.getElementById('choice1');
+        const choice2 = document.getElementById('choice2');
+        const choice3 = document.getElementById('choice3');
+
+        item1Btn.addEventListener('click', function() {
+            radio1.checked = true;
+            radio2.checked = false;
+            radio3.checked = false;
+            choice1.style.display = 'block';
+            choice2.style.display = 'none';
+            choice3.style.display = 'none';
+        });
+
+        item2Btn.addEventListener('click', function() {
+            radio1.checked = false;
+            radio2.checked = true;
+            radio3.checked = false;
+            choice1.style.display = 'none';
+            choice2.style.display = 'block';
+            choice3.style.display = 'none';
+        });
+
+        item3Btn.addEventListener('click', function() {
+            radio1.checked = false;
+            radio2.checked = false;
+            radio3.checked = true;
+            choice1.style.display = 'none';
+            choice2.style.display = 'none';
+            choice3.style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>
